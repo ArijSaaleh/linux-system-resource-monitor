@@ -1,48 +1,57 @@
+import sys
 import psutil
-import tkinter as tk
-from tkinter import Label
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget
 
+class SystemMonitorApp(QMainWindow):
+    def __init__(self):
+        super().__init__()
 
-def update_usage():
-    cpu_usage = psutil.cpu_percent(interval=1)
-    memory_usage = psutil.virtual_memory().percent
-    cpu_label.config(text=f"CPU Usage: {cpu_usage:.2f}%")
-    memory_label.config(text=f"Memory Usage: {memory_usage:.2f}%")
-    root.after(1000, update_usage)
+        self.setWindowTitle("System Resource Monitor")
 
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
 
-def update_disk_usage():
-    partitions = psutil.disk_partitions()
-    disk_text = "Disk Usage:\n"
-    for partition in partitions:
-        usage = psutil.disk_usage(partition.mountpoint)
-        disk_text += f"{partition.device}: {usage.percent:.2f}% used\n"
-    disk_label.config(text=disk_text)
-    root.after(1000, update_disk_usage)
+        layout = QVBoxLayout()
+        central_widget.setLayout(layout)
 
+        self.disk_label = QLabel("Disk Usage: -")
+        layout.addWidget(self.disk_label)
 
-def update_network_usage():
-    network = psutil.net_io_counters()
-    network_text = f"Network Usage:\nUpload: {network.bytes_sent} bytes\nDownload: {network.bytes_recv} bytes"
-    network_label.config(text=network_text)
-    root.after(1000, update_network_usage)
+        self.network_label = QLabel("Network Usage: -")
+        layout.addWidget(self.network_label)
 
+        self.cpu_label = QLabel("CPU Usage: -")
+        layout.addWidget(self.cpu_label)
 
-root = tk.Tk()
-root.title("System Resource Monitor")
-disk_label = Label(root, text="Disk Usage: -")
-disk_label.pack()
+        self.memory_label = QLabel("Memory Usage: -")
+        layout.addWidget(self.memory_label)
 
-network_label = Label(root, text="Network Usage: -")
-network_label.pack()
-cpu_label = Label(root, text="CPU Usage: -")
-cpu_label.pack()
+        self.update_usage()
+        self.update_disk_usage()
+        self.update_network_usage()
 
-memory_label = Label(root, text="Memory Usage: -")
-memory_label.pack()
+    def update_usage(self):
+        cpu_usage = psutil.cpu_percent(interval=1)
+        memory_usage = psutil.virtual_memory().percent
+        self.cpu_label.setText(f"CPU Usage: {cpu_usage:.2f}%")
+        self.memory_label.setText(f"Memory Usage: {memory_usage:.2f}%")
+        self.timer = self.startTimer(1000)
 
-update_usage()
-update_disk_usage()
-update_network_usage()
+    def update_disk_usage(self):
+        partitions = psutil.disk_partitions()
+        disk_text = "Disk Usage:\n"
+        for partition in partitions:
+            usage = psutil.disk_usage(partition.mountpoint)
+            disk_text += f"{partition.device}: {usage.percent:.2f}% used\n"
+        self.disk_label.setText(disk_text)
 
-root.mainloop()
+    def update_network_usage(self):
+        network = psutil.net_io_counters()
+        network_text = f"Network Usage:\nUpload: {network.bytes_sent} bytes\nDownload: {network.bytes_recv} bytes"
+        self.network_label.setText(network_text)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    monitor_app = SystemMonitorApp()
+    monitor_app.show()
+    sys.exit(app.exec_())

@@ -19,7 +19,7 @@
 
     Python for scripting and system information retrieval.
     Linux system commands like ps, df, free, ifconfig for collecting resource data.
-    GUI library such as Tkinter or PyQt for creating the graphical interface.
+    GUI library such as PyQt for creating the graphical interface.
     Threading or asynchronous programming for updating data at intervals.
 
 4. Enhancements:
