@@ -287,6 +287,18 @@ border:none;
        </property>
        <item>
         <widget class="QFrame" name="left_menu">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -309,12 +321,16 @@ border:none;
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item alignment="Qt::AlignLeft|Qt::AlignTop">
+          <item alignment="Qt::AlignLeft">
            <widget class="QFrame" name="menu_frame">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="styleSheet">
-             <string notr="true">*{
-	color: rgb(255, 255, 255);
-}</string>
+             <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -322,9 +338,24 @@ border:none;
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QGridLayout" name="gridLayout">
+            <layout class="QGridLayout" name="gridLayout_2">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item row="0" column="0" alignment="Qt::AlignLeft">
-              <widget class="QPushButton" name="pushButton_3">
+              <widget class="QPushButton" name="cpu">
                <property name="styleSheet">
                 <string notr="true">color: rgb(255, 255, 255);</string>
                </property>
@@ -335,20 +366,90 @@ border:none;
                 <iconset resource="feather/icons.qrc">
                  <normaloff>:/icons/cpu.svg</normaloff>:/icons/cpu.svg</iconset>
                </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
               </widget>
              </item>
-             <item row="0" column="1">
-              <widget class="QLabel" name="label_5">
+             <item row="5" column="0" alignment="Qt::AlignLeft">
+              <widget class="QPushButton" name="network">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="feather/icons.qrc">
+                 <normaloff>:/icons/wifi.svg</normaloff>:/icons/wifi.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1" alignment="Qt::AlignLeft">
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>Partitions</string>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1" alignment="Qt::AlignLeft">
+              <widget class="QLabel" name="label_6">
                <property name="styleSheet">
                 <string notr="true">color: rgb(255, 255, 255);</string>
                </property>
                <property name="text">
-                <string>CPU</string>
+                <string>Network</string>
+               </property>
+               <property name="margin">
+                <number>5</number>
                </property>
               </widget>
              </item>
-             <item row="2" column="0" alignment="Qt::AlignLeft">
-              <widget class="QPushButton" name="pushButton_5">
+             <item row="1" column="0" alignment="Qt::AlignLeft">
+              <widget class="QPushButton" name="sys_info">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="feather/icons.qrc">
+                 <normaloff>:/icons/info.svg</normaloff>:/icons/info.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" alignment="Qt::AlignLeft">
+              <widget class="QPushButton" name="battery">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="feather/icons.qrc">
+                 <normaloff>:/icons/battery-charging.svg</normaloff>:/icons/battery-charging.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0" alignment="Qt::AlignLeft">
+              <widget class="QPushButton" name="partitions">
                <property name="text">
                 <string/>
                </property>
@@ -356,72 +457,68 @@ border:none;
                 <iconset resource="feather/icons.qrc">
                  <normaloff>:/icons/server.svg</normaloff>:/icons/server.svg</iconset>
                </property>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <widget class="QPushButton" name="pushButton_7">
-               <property name="text">
-                <string>PushButton</string>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
                </property>
               </widget>
              </item>
-             <item row="3" column="0">
-              <widget class="QPushButton" name="pushButton_6">
-               <property name="text">
-                <string>PushButton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="0">
-              <widget class="QPushButton" name="pushButton_8">
-               <property name="text">
-                <string>PushButton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
-              <widget class="QLabel" name="label_6">
-               <property name="text">
-                <string>Network</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="1">
-              <widget class="QLabel" name="label_7">
-               <property name="text">
-                <string>Partitions</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="1">
-              <widget class="QLabel" name="label_8">
-               <property name="text">
-                <string>Battery</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="1">
-              <widget class="QLabel" name="label_9">
-               <property name="text">
-                <string>Activities</string>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="1">
-              <widget class="QLabel" name="label_10">
-               <property name="text">
-                <string>Sys info</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QPushButton" name="pushButton_4">
+             <item row="2" column="0" alignment="Qt::AlignLeft">
+              <widget class="QPushButton" name="activities">
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
                 <iconset resource="feather/icons.qrc">
-                 <normaloff>:/icons/wifi.svg</normaloff>:/icons/wifi.svg</iconset>
+                 <normaloff>:/icons/activity.svg</normaloff>:/icons/activity.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1" alignment="Qt::AlignLeft">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>System info</string>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1" alignment="Qt::AlignLeft">
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>CPU</string>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1" alignment="Qt::AlignLeft">
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>Battery</string>
+               </property>
+               <property name="margin">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1" alignment="Qt::AlignLeft">
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>Activities</string>
+               </property>
+               <property name="margin">
+                <number>5</number>
                </property>
               </widget>
              </item>
