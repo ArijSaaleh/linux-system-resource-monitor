@@ -38,6 +38,9 @@ border:none;
     </property>
     <item alignment="Qt::AlignTop">
      <widget class="QFrame" name="header_frame">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(129, 61, 156);</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -330,7 +333,8 @@ border:none;
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(129, 61, 156);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
