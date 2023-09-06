@@ -544,7 +544,7 @@ background-color: rgb(129, 61, 156);</string>
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>3</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="cpu_ram">
              <property name="styleSheet">
@@ -720,7 +720,120 @@ background-color: rgb(129, 61, 156);</string>
              </widget>
             </widget>
             <widget class="QWidget" name="sys_info_page"/>
-            <widget class="QWidget" name="acti"/>
+            <widget class="QWidget" name="acti">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <widget class="QLabel" name="label_42">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>30</y>
+                <width>101</width>
+                <height>17</height>
+               </rect>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>14</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Activities</string>
+              </property>
+             </widget>
+             <widget class="QLineEdit" name="lineEdit">
+              <property name="geometry">
+               <rect>
+                <x>260</x>
+                <y>30</y>
+                <width>141</width>
+                <height>25</height>
+               </rect>
+              </property>
+              <property name="font">
+               <font>
+                <strikeout>false</strikeout>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(192, 191, 188);</string>
+              </property>
+              <property name="text">
+               <string>search processus</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_43">
+              <property name="geometry">
+               <rect>
+                <x>410</x>
+                <y>30</y>
+                <width>31</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="feather/icons.qrc">:/icons/search.svg</pixmap>
+              </property>
+             </widget>
+             <widget class="QTableWidget" name="tableWidget">
+              <property name="geometry">
+               <rect>
+                <x>5</x>
+                <y>61</y>
+                <width>451</width>
+                <height>271</height>
+               </rect>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="suspend">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>350</y>
+                <width>89</width>
+                <height>25</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>Suspend</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="terminate">
+              <property name="geometry">
+               <rect>
+                <x>120</x>
+                <y>350</y>
+                <width>89</width>
+                <height>25</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>Terminate</string>
+              </property>
+             </widget>
+             <widget class="QPushButton" name="kill">
+              <property name="geometry">
+               <rect>
+                <x>240</x>
+                <y>350</y>
+                <width>89</width>
+                <height>25</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>Kill</string>
+              </property>
+             </widget>
+            </widget>
             <widget class="QWidget" name="bat">
              <property name="styleSheet">
               <string notr="true">color: rgb(255, 255, 255);</string>
