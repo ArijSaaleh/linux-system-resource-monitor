@@ -1,9 +1,8 @@
 import psutil
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import QTimer
 from PyQt5.uic import loadUi
-import pyqtgraph as p
+import icons_rc
 def update_usage():
     cpu_usage = psutil.cpu_percent(interval=1)
     memory_usage = psutil.virtual_memory().percent
